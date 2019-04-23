@@ -1,0 +1,89 @@
+---
+title: "introduction"
+author: "Lincoln"
+date: "4/23/2019"
+output: pdf_document
+---
+
+load libraries
+```{r}
+library(MutationalPatterns)
+library(BSgenome)
+```
+
+list all of the available genomes
+```{r}
+available.genomes()
+```
+
+bullshit to install hg38
+```{r}
+if (interactive()) {
+  if (!require("BiocManager"))
+    install.packages("BiocManager")
+  BiocManager::install("BSgenome.Hsapiens.UCSC.hg38")
+}
+```
+
+hg38 should show up
+```{r}
+installed.genomes()
+```
+
+NOW we can load hg38
+```{r}
+ref_genome <- "BSgenome.Hsapiens.UCSC.hg38"
+library(ref_genome, character.only = TRUE)
+```
+
+list some sample vcfs
+```{r}
+vcf_files <- list.files(system.file("extdata", package="MutationalPatterns"), pattern = ".vcf", full.names = TRUE)
+vcf_files[[1]]
+```
+
+```{r}
+sample_names <- c("colon1", "colon2", "colon3", "intestine1", "intestine2", "intestine3", "liver1", "liver2", "liver3")
+tissue <- c(rep("colon", 3), rep("intestine", 3), rep("liver", 3))
+```
+
+load vcfs, as Grange objs
+```{r}
+vcfs <- read_vcfs_as_granges(vcf_files, sample_names, ref_genome)
+summary(vcfs)
+```
+
+guess this creates a list of vcfs
+```{r}
+vcfs[[1]]
+vcfs[[2]]
+```
+
+get base substitution rates, for single vcf 
+```{r}
+muts = mutations_from_vcf(vcfs[[1]])
+head(muts, 12)
+```
+
+what?!
+```{r}
+types = mut_type(vcfs[[1]])
+head(types, 12)
+```
+
+retrieve sequence context
+```{r}
+context = mut_context(vcfs[[3]], ref_genome)
+head(context)
+```
+
+```{r}
+type_context = type_context(vcfs[[1]], ref_genome)
+lapply(type_context, head, 12)
+```
+
+```{r}
+type_occurrences <- mut_type_occurrences(vcfs, ref_genome)
+type_occurrences
+```
+
