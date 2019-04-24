@@ -5,6 +5,13 @@ date: "4/23/2019"
 output: pdf_document
 ---
 
+install this bad boy
+```{r}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("MutationalPatterns", version = "3.8")
+```
+
 load libraries
 ```{r}
 library(MutationalPatterns)
