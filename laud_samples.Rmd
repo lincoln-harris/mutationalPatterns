@@ -19,14 +19,12 @@ library(ref_genome, character.only = TRUE)
 
 list some sample vcfs
 ```{r}
-vcf_files <- list.files(path = './laud_sample_vcfs_larger', pattern = ".vcf", full.names = TRUE)
-vcf_files
+vcf_files <- list.files(path = './laud_samples_larger', pattern = ".vcf", full.names = TRUE)
 ```
 
 ```{r}
 cell_names <- stringr::str_remove_all(vcf_files, ".vcf")
 cell_names <- stringr::str_remove_all(cell_names, "./laud_samples_larger/")
-cell_names
 ```
 
 load vcfs, as Grange objs
@@ -67,7 +65,7 @@ type_occurrences
 
 plot
 ```{r}
+pdf("myplot1.pdf", width=4, height=4)
 p1 <- plot_spectrum(type_occurrences)
-p1
+dev.off()
 ```
-
