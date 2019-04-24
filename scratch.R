@@ -31,5 +31,5 @@ type_occurrences <- mut_type_occurrences(vcfs, ref_genome)
 
 # plot, and save
 pdf("myplot2.pdf", width=4, height=4)
-p1 <- plot_spectrum(type_occurrences)
+plot_spectrum(type_occurrences)
 dev.off()
