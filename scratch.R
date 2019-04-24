@@ -1,16 +1,6 @@
-# install package (LEAVE COMMENTED OUT)
-#if (!requireNamespace("BiocManager", quietly = TRUE))
-#  install.packages("BiocManager")
-#BiocManager::install("MutationalPatterns", version = "3.8")
-
 # load libraries
 library(MutationalPatterns)
 library(BSgenome)
-
-# bullshit to install hg38 (LEAVE COMMENTED OUT)
-#if (!require("BiocManager"))
-#  install.packages("BiocManager")
-#BiocManager::install("BSgenome.Hsapiens.UCSC.hg38")
 
 # load hg38
 ref_genome <- "BSgenome.Hsapiens.UCSC.hg38"
@@ -31,5 +21,5 @@ type_occurrences <- mut_type_occurrences(vcfs, ref_genome)
 
 # plot, and save
 pdf("myplot2.pdf", width=4, height=4)
-plot_spectrum(type_occurrences)
+p1 <- plot_spectrum(type_occurrences)
 dev.off()
