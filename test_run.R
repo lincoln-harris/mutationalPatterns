@@ -30,6 +30,6 @@ vcfs <- read_vcfs_as_granges(vcf_files, cell_names, ref_genome)
 type_occurrences <- mut_type_occurrences(vcfs, ref_genome)
 
 # plot, and save
-pdf("mut_type_laud_ALL.pdf", width=4, height=4)
+pdf("mut_type_laud_all.pdf", width=4, height=4)
 plot_spectrum(type_occurrences)
 dev.off()
