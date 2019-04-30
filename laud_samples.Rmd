@@ -19,18 +19,28 @@ library(ref_genome, character.only = TRUE)
 
 list some sample vcfs
 ```{r}
-vcf_files <- list.files(path = './laud_samples_larger', pattern = ".vcf", full.names = TRUE)
+vcf_files <- list.files(path = './laud_samples', pattern = ".vcf", full.names = TRUE)
 ```
 
 ```{r}
 cell_names <- stringr::str_remove_all(vcf_files, ".vcf")
-cell_names <- stringr::str_remove_all(cell_names, "./laud_samples_larger/")
+cell_names <- stringr::str_remove_all(cell_names, "./laud_samples/")
 ```
 
 load vcfs, as Grange objs
 ```{r}
-vcfs <- read_vcfs_as_granges(vcf_files, cell_names, ref_genome)
+vcfs <- read_vcfs_as_granges(vcf_files, cell_names, ref_genome, group = 'all')
 summary(vcfs)
+```
+
+test test test
+```{r}
+for (i in 1:length(vcf_files)) {
+  currFile = vcf_files[[i]]
+  currCell = cell_names[[i]]
+  print(currCell)
+  read_vcfs_as_granges(currFile, currCell, ref_genome, group = 'all')
+}
 ```
 
 guess this creates a list of vcfs

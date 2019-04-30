@@ -1,18 +1,15 @@
-^Z
-
-
 [01;32mubuntu@ip-172-31-35-165[00m:[01;34m/home/rstudio/mutationalPatterns[00m$ ls
-helloWorld.R      [0m[01;34mlaud_samples_larger[0m    myplot1.pdf  [01;32mreplace.sh[0m   test1.pdf
-[01;32mintroduction.Rmd[0m  [01;32mlaud_samples.Rmd[0m       myplot2.pdf  scratch.R    test_run.R
-[01;34mlaud_samples[0m      [01;32mLICENSE[0m                myplot.pdf   screenlog.0
-[01;34mlaud_samples_all[0m  mut_type_laud_sub.pdf  [01;32mREADME.md[0m    [01;34mtest[0m
+helloWorld.R            [0m[01;32mLICENSE[0m                my_read_vcfs_as_granges.R  scratch.R
+[01;32mintroduction.Rmd[0m        mut_type_laud_sub.pdf  [01;32mREADME.md[0m                  screenlog.0
+[01;34mlaud_samples_gFilter[0m    myplot1.pdf            read_vcfs_as_granges.R     [01;34mtest[0m
+[01;34mlaud_samples_nonFilter[0m  myplot2.pdf            [01;32mreplace.sh[0m                 test1.pdf
+[01;32mlaud_samples.Rmd[0m        myplot.pdf             run_mutational_patterns.R
 [01;32mubuntu@ip-172-31-35-165[00m:[01;34m/home/rstudio/mutationalPatterns[00m$ 
 [01;32mubuntu@ip-172-31-35-165[00m:[01;34m/home/rstudio/mutationalPatterns[00m$ 
 [01;32mubuntu@ip-172-31-35-165[00m:[01;34m/home/rstudio/mutationalPatterns[00m$ 
 [01;32mubuntu@ip-172-31-35-165[00m:[01;34m/home/rstudio/mutationalPatterns[00m$ 
 [01;32mubuntu@ip-172-31-35-165[00m:[01;34m/home/rstudio/mutationalPatterns[00m$ 
-[01;32mubuntu@ip-172-31-35-165[00m:[01;34m/home/rstudio/mutationalPatterns[00m$ 
-[01;32mubuntu@ip-172-31-35-165[00m:[01;34m/home/rstudio/mutationalPatterns[00m$ sudo Rscript test_run.R 
+[01;32mubuntu@ip-172-31-35-165[00m:[01;34m/home/rstudio/mutationalPatterns[00m$ sudo Rscript run_mutational_patterns.R 
 Loading required package: GenomicRanges
 Loading required package: stats4
 Loading required package: BiocGenerics
@@ -87,3 +84,7 @@ The following object is masked from ‘package:base’:
     strsplit
 
 Loading required package: rtracklayer
+There were 50 or more warnings (use warnings() to see the first 50)
+[1] " "
+[1] "print finished loading vcfs"
+[1] " "
