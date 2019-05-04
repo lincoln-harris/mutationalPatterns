@@ -1,7 +1,7 @@
 # install package (LEAVE COMMENTED OUT)
 #if (!requireNamespace("BiocManager", quietly = TRUE))
 #  install.packages("BiocManager")
-#BiocManager::install("MutationalPatterns", version = "3.8")
+#BiocManager::install("MutationalPatterns")
 
 # load libraries
 library(MutationalPatterns)
@@ -17,11 +17,11 @@ ref_genome <- "BSgenome.Hsapiens.UCSC.hg38"
 library(ref_genome, character.only = TRUE)
 
 # list some sample vcfs
-vcf_files <- list.files(path = './laud_samples_gFilter_smaller', pattern = ".vcf", full.names = TRUE)
+vcf_files <- list.files(path = './laud_samples_sub', pattern = ".vcf", full.names = TRUE)
 
 # get cell names
-cell_names <- stringr::str_remove_all(vcf_files, "_unique.vcf")
-cell_names <- stringr::str_remove_all(cell_names, "./laud_samples_gFilter_smaller/")
+cell_names <- stringr::str_remove_all(vcf_files, ".vcf")
+cell_names <- stringr::str_remove_all(cell_names, "./laud_samples_sub/")
 
 # load vcfs, as Grange objs
 vcfs <- read_vcfs_as_granges(vcf_files, cell_names, ref_genome, check_alleles = TRUE)
