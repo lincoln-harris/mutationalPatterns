@@ -17,11 +17,11 @@ ref_genome <- "BSgenome.Hsapiens.UCSC.hg38"
 library(ref_genome, character.only = TRUE)
 
 # list some sample vcfs
-vcf_files <- list.files(path = './laud_samples_sub', pattern = ".vcf", full.names = TRUE)
+vcf_files <- list.files(path = './samples_filter_all', pattern = ".vcf", full.names = TRUE)
 
 # get cell names
 cell_names <- stringr::str_remove_all(vcf_files, ".vcf")
-cell_names <- stringr::str_remove_all(cell_names, "./laud_samples_sub/")
+cell_names <- stringr::str_remove_all(cell_names, "./samples_filter_all/")
 
 # load vcfs, as Grange objs
 vcfs <- read_vcfs_as_granges(vcf_files, cell_names, ref_genome, check_alleles = TRUE)

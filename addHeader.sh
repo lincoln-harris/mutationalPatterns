@@ -1,3 +1,4 @@
+##fileformat=VCFv4.2
 #!/bin/bash
 
 for f in *; do
