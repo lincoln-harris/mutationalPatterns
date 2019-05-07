@@ -1,0 +1,64 @@
+---
+title: "run_mutational_patterns"
+output: html_document
+---
+
+```{r}
+setwd('/home/rstudio/mutationalPatterns/')
+```
+
+install patch
+```{r}
+library(devtools)
+devtools::install_github("UMCUGenetics/MutationalPatterns", ref = "lincoln-harris", force = TRUE)
+```
+
+load libraries
+```{r}
+library(MutationalPatterns)
+library(BSgenome)
+```
+
+load hg38
+```{r}
+ref_genome <- "BSgenome.Hsapiens.UCSC.hg38"
+library(ref_genome, character.only = TRUE)
+```
+
+get vcf list
+```{r}
+vcf_files <- list.files(path = './samples_filter_sub', pattern = ".vcf", full.names = TRUE)
+```
+
+get cell names
+```{r}
+cell_names <- stringr::str_remove_all(vcf_files, ".vcf")
+cell_names <- stringr::str_remove_all(cell_names, "./samples_filter_sub/")
+```
+
+load vcfs, as Grange objs
+```{r}
+vcfs <- read_vcfs_as_granges(vcf_files, cell_names, ref_genome, check_alleles = TRUE)
+```
+
+get type of each mut
+```{r}
+type_occurrences <- mut_type_occurrences(vcfs, ref_genome)
+```
+
+save mut_type_occurances dataframe
+```{r}
+write.csv(type_occurrences, 'type_occurences_df_sub.csv')
+```
+
+plot, and save
+```{r}
+pdf("mut_type_laud_gFilter_sub1.pdf", width=4, height=4)
+plot_spectrum(type_occurrences)
+dev.off()
+```
+
+
+
+
+
