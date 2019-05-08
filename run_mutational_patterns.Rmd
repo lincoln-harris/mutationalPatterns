@@ -27,13 +27,13 @@ library(ref_genome, character.only = TRUE)
 
 get vcf list
 ```{r}
-vcf_files <- list.files(path = './samples_filter_sub', pattern = ".vcf", full.names = TRUE)
+vcf_files <- list.files(path = './samples_filter_all/', pattern = ".vcf", full.names = TRUE)
 ```
 
 get cell names
 ```{r}
 cell_names <- stringr::str_remove_all(vcf_files, ".vcf")
-cell_names <- stringr::str_remove_all(cell_names, "./samples_filter_sub/")
+cell_names <- stringr::str_remove_all(cell_names, "./samples_filter_all//")
 ```
 
 load vcfs, as Grange objs
@@ -52,6 +52,7 @@ write.csv(type_occurrences, 'type_occurences_df_sub.csv')
 ```
 
 plot, and save
+error in here!
 ```{r}
 pdf("mut_type_laud_gFilter_sub1.pdf", width=4, height=4)
 plot_spectrum(type_occurrences)

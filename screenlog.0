@@ -1,0 +1,37 @@
+[01;32mubuntu@ip-172-31-33-7[00m:[01;34m/home/rstudio/mutationalPatterns[00m$ 
+[01;32mubuntu@ip-172-31-33-7[00m:[01;34m/home/rstudio/mutationalPatterns[00m$ 
+[01;32mubuntu@ip-172-31-33-7[00m:[01;34m/home/rstudio/mutationalPatterns[00m$ ls
+[0m[01;32mLICENSE[0m                         [01;32mmyplot1.pdf[0m
+[01;32mREADME.md[0m                       [01;32mmyplot2.pdf[0m
+[01;32maddHeader.sh[0m                    [01;32mread_vcfs_as_granges.R[0m
+[01;32mheaderTest.py[0m                   [01;32mreplace.sh[0m
+[01;32mhelloWorld.R[0m                    [01;32mrun_mutational_patterns.R[0m
+[01;32mintroduction.Rmd[0m                run_mutational_patterns.Rmd
+[01;32mlaud_samples.Rmd[0m                [01;32mrun_mutational_patterns_patch.R[0m
+[01;32mmut_type_laud_gFilter.pdf[0m       [34;42msamples_filter_all[0m
+[01;32mmut_type_laud_gFilter_sub.pdf[0m   [34;42msamples_filter_sub[0m
+[01;32mmut_type_laud_gFilter_sub1.pdf[0m  [01;32mscratch.R[0m
+[01;32mmut_type_laud_nonFilter.pdf[0m     screenlog.0
+[01;32mmut_type_laud_sub.pdf[0m           [01;32mtest1.pdf[0m
+[01;32mmy_read_vcfs_as_granges.R[0m       type_occurences_df_sub.csv
+[01;32mmyplot.pdf[0m
+[01;32mubuntu@ip-172-31-33-7[00m:[01;34m/home/rstudio/mutationalPatterns[00m$ 
+[01;32mubuntu@ip-172-31-33-7[00m:[01;34m/home/rstudio/mutationalPatterns[00m$ 
+[01;32mubuntu@ip-172-31-33-7[00m:[01;34m/home/rstudio/mutationalPatterns[00m$ sudo Rscript run_mutational_patteerns.R[K[K_patch.R 
+Downloading GitHub repo UMCUGenetics/MutationalPatterns@lincoln-harris
+
+Skipping 21 packages ahead of CRAN: AnnotationDbi, Biobase, BiocGenerics, BiocParallel, biomaRt, Biostrings, BSgenome, DelayedArray, GenomeInfoDb, GenomeInfoDbData, GenomicAlignments, GenomicFeatures, GenomicRanges, IRanges, Rsamtools, rtracklayer, S4Vectors, SummarizedExperiment, VariantAnnotation, XVector, zlibbioc
+     checking for file ‘/tmp/RtmppsUEf4/remotes74192bd3/UMCUGenetics-MutationalPatterns-2cb879a/DESCRIPTION’ ...  [32m✔[39m  [38;5;247mchecking for file ‘/tmp/RtmppsUEf4/remotes74192bd3/UMCUGenetics-MutationalPatterns-2cb879a/DESCRIPTION’[39m[36m[39m
+  [38;5;247m─[39m[38;5;247m  [39m[38;5;247mpreparing ‘MutationalPatterns’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [38;5;247mchecking DESCRIPTION meta-information[39m[36m[39m
+  [38;5;247m─[39m[38;5;247m  [39m[38;5;247mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [38;5;247m─[39m[38;5;247m  [39m[38;5;247mchecking for empty or unneeded directories[39m[36m[39m
+  [38;5;247m─[39m[38;5;247m  [39m[38;5;247mbuilding ‘MutationalPatterns_1.6.2.tar.gz’[39m[36m[39m
+     
+Installing package into ‘/usr/local/lib/R/site-library’
+(as ‘lib’ is unspecified)
+* installing *source* package ‘MutationalPatterns’ ...
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
